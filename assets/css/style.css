@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+.mainContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "encabezado"
+    "menu"
+    "principal"
+    "pie";
+  height: auto;
+}
+header {
+  color: rgb(232, 233, 232);
+  background-color: #ccc;
+  grid-area: encabezado;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#redes {
+  width: 30vh;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+header img {
+  width: 15vh;
+}
+.logoEscritorio {
+  display: none;
+}
+h1 {
+  font-size: 20pt;
+}
+aside {
+  background-color: rgb(90, 91, 90);
+  grid-area: menu;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.listaMenu {
+  list-style: none;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.listaMenu p {
+  font-weight: 200;
+}
+.listaMenu a {
+  text-decoration: none;
+  color: white;
+}
+.listaMenu a:hover {
+  color: #1f3447;
+}
+
+main {
+  background-color: #1f3447;
+  grid-area: principal;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#quienesSomos {
+  text-align: justify;
+  color: rgb(228, 228, 228);
+  padding: 10px;
+}
+#quienesSomos h2 {
+  text-align: center;
+  margin: 20px;
+}
+footer {
+  grid-area: pie;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(232, 233, 232);
+  background-color: #ccc;
+}
+.card {
+  padding-top: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card img {
+  width: 90%;
+  height: 80%;
+  object-fit: cover;
+  border: 5px rgb(228, 228, 228) solid;
+  transition: filter 0.9s ease;
+}
+.card img:hover {
+  filter: grayscale(100%) sepia(100%) hue-rotate(180deg) saturate(200%);
+}
+
+#contacto {
+  max-width: 400px;
+  margin: auto;
+  padding: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  color: rgb(228, 228, 228);
+  margin-bottom: 15px;
+}
+#contacto h2 {
+  text-align: center;
+  color: rgb(228, 228, 228);
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="submit"] {
+  background-color: #f88321;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+/* Version ESCRITORIO */
+@media (min-width: 576px) {
+  .mainContainer {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 10% 75% 15%;
+    grid-template-areas:
+      "encabezado encabezado"
+      "menu principal"
+      "pie pie";
+    height: 100vh;
+  }
+
+  header {
+    grid-area: encabezado;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  header img {
+    width: 200px;
+  }
+  .logoEscritorio {
+    display: block;
+  }
+
+  .logoMobile {
+    display: none;
+  }
+
+  aside {
+    grid-area: menu;
+    padding-top: 20px;
+  }
+
+  .listaMenu {
+    list-style: none;
+    display: flex;
+    margin-top: 10px;
+    color: rgb(36, 36, 43);
+  }
+  .listaMenu p {
+    margin-left: 5%;
+    font-weight: 300;
+  }
+  main {
+    grid-area: principal;
+    display: flex;
+    overflow: auto;
+  }
+  #fotos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  footer {
+    grid-area: pie;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .card {
+    display: flex;
+    flex: 1 1 250px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card img {
+    width: 90%;
+    object-fit: cover;
+  }
+}
